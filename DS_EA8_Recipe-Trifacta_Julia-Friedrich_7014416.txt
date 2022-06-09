@@ -1,0 +1,7 @@
+settype col: age lockDataType: true type: Integer
+filter type: custom rowType: single row: 0 >= age action: Delete
+filter type: custom rowType: single row: 'old' == age action: Delete
+filter type: custom rowType: single row: ('' == id) && ('' == full_name) action: Delete
+set col: id value: IF('' == id, 22, $col)
+filter type: custom rowType: single row: IN(email, ['']) action: Delete
+set col: gender value: IF(IN(gender, ['']), 'Divers', $col)
