@@ -1,0 +1,18 @@
+Lock age type to Integer
+Lock age type to Integer
+settype col: age lockDataType: true type: Integer
+sort order: age
+settype col: full_name lockDataType: true type: String
+settype col: first_name lockDataType: true type: String
+settype col: last_name lockDataType: true type: String
+filter type: custom rowType: single row: 0 >= age action: Delete
+settype col: gender lockDataType: true type: String
+settype col: gender lockDataType: true type: String
+settype col: gender lockDataType: true type: String
+filter type: custom rowType: single row: '' == id action: Delete
+filter type: custom rowType: single row: 'old' == age action: Delete
+settype col: email lockDataType: true type: String
+settype col: email lockDataType: true type: Integer
+settype col: email lockDataType: true type: String
+filter type: custom rowType: single row: !IN(gender, ['Male','Female']) action: Delete
+filter type: custom rowType: single row: IN(email, ['']) action: Delete
